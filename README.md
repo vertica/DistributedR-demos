@@ -35,6 +35,7 @@ The census dataset contains 40 attributes (personal, job and income related) tha
 
 There are two ways to Install Distributed R.
 Using the Distributed R installer (recommended):
+
 1.  Go to [http://my.vertica.com/distributedr](http://my.vertica.com/distributedr).
 2.  Sign up/Sign in and download the Distributed R installer (Downloads -> HP Vertica Distributed R).
 3.  Follow the installation instructions in the  [docs](http://www.vertica.com/hp-vertica-documentation/hp-vertica-distributed-r-1-0-x-product-documentation/ "Distributed R docs") .
