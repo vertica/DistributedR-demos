@@ -39,7 +39,7 @@ Using the Distributed R installer (recommended):
 1.  Go to [http://my.vertica.com/distributedr](http://my.vertica.com/distributedr).
 2.  Sign up/Sign in and download the Distributed R installer (Downloads -> HP Vertica Distributed R).
 3.  Follow the installation instructions in the  [docs](http://www.vertica.com/hp-vertica-documentation/hp-vertica-distributed-r-1-0-x-product-documentation/ "Distributed R docs") .
-4.  In Distributed R 1.0.0 we only support Cent0S. Ubuntu will be supported in release 1.1.0.
+4.  Distributed R 1.0.0 supports Cent0S 6.x. 
 
 Building from source:
 
