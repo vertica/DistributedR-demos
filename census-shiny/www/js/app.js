@@ -159,7 +159,7 @@
           octopus.getpersonalChecked(), octopus.getjobincomeChecked());
           if(checkedAtLeastOne) {
             //hide image
-            $("#predictedAveragePrice").hide();
+            $("#shinyBarPlot").hide();
             $("#serverspecs").hide();
             //show progress bar
             $("#progressbar").show();
@@ -207,8 +207,8 @@
   var timingView = {
     init: function() {
       console.log('initializing timings view');
-      this.rTimingDiv = document.getElementById('similarHouse2');
-      this.distributedRTimingDiv = document.getElementById('similarHouse3');
+      this.rTimingDiv = document.getElementById('shinyElapsedRTime');
+      this.distributedRTimingDiv = document.getElementById('shinyElapsedDistributedRTime');
     },
     clearRTiming: function() {
       this.rTimingDiv.innerHTML = '';
@@ -230,9 +230,9 @@
       // store the DOM element for easy access later
       this.historyTextbox = document.getElementById('content');
       /*R timing info is output in 'similarHouse1' by shiny
-      Distributed R info is output in 'similarHouse2'*/
+      Distributed R info is output in 'shinyElapsedRTime'*/
       this.rTimingInfo = document.getElementById('similarHouse1');
-      this.distributedRTimingInfo = document.getElementById('similarHouse2');
+      this.distributedRTimingInfo = document.getElementById('shinyElapsedRTime');
 
       // configuration of the observers:
       var config = { attributes: false, childList: true, characterData: true, subtree: true };
@@ -243,7 +243,7 @@
       var onRTimingInfoUpdated = function(mutation) {
         console.log('onRTimingInfoUpdated: mutation, type: %s attributeName: %s oldValue: %s',
         mutation.type, mutation.attributeName, mutation.oldValue);
-        var rTime = octopus.matchTimingInfo(document.getElementById('similarHouse2').innerHTML);
+        var rTime = octopus.matchTimingInfo(document.getElementById('shinyElapsedRTime').innerHTML);
         if (rTime != null) {
           octopus.onRRunCompleted(rTime);
         }
@@ -251,7 +251,7 @@
       var rObserver = new MutationObserver(function(mutations) {
         mutations.forEach(onRTimingInfoUpdated);
       });
-      var rTarget = document.querySelector('#similarHouse2Div');
+      var rTarget = document.querySelector('#shinyElapsedRTimeDiv');
       rObserver.observe(rTarget, config);
 
       /*
@@ -260,7 +260,7 @@
       var onDistributedRTimingInfoUpdated = function(mutation) {
         console.log('onDistributedRTimingInfoUpdated: mutation, type: %s attributeName: %s oldValue: %s',
         mutation.type, mutation.attributeName, mutation.oldValue);
-        var distributedRTime = octopus.matchTimingInfo(document.getElementById('similarHouse3').innerHTML);
+        var distributedRTime = octopus.matchTimingInfo(document.getElementById('shinyElapsedDistributedRTime').innerHTML);
         if (distributedRTime != null) {
           octopus.onDistributedRRunCompleted(distributedRTime);
         }
@@ -268,7 +268,7 @@
       var distributedRObserver = new MutationObserver(function(mutations) {
         mutations.forEach(onDistributedRTimingInfoUpdated);
       });
-      var distributedRTarget = document.querySelector('#similarHouse3Div');
+      var distributedRTarget = document.querySelector('#shinyElapsedDistributedRTimeDiv');
       distributedRObserver.observe(distributedRTarget, config);
 
       //detect when shiny progress bar is active
@@ -287,7 +287,7 @@
             console.log('shiny progress bar removed');
             //remove busy div
             $('#progressbar').hide();
-            $('#predictedAveragePrice').show();
+            $('#shinyBarPlot').show();
             $("#serverspecs").show();
             var state = hopscotch.getState();
             var tour = hopscotch.getCurrTour();

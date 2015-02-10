@@ -181,7 +181,7 @@
           <p class="progress-message">First we're ranking the attributes in regular R. <br/>Then we're doing the same analysis in Distributed R.<br/>Finally we compare the time it takes in both cases.<br/>Calculation in progress ...</p>
           <img src="img/ajaxloaderq.gif" align="center"/>
         </div>
-        <div id="predictedAveragePrice" class="overlay shiny-plot-output" style="width: 100% ; height: 80%"></div>
+        <div id="shinyBarPlot" class="overlay shiny-plot-output" style="width: 100% ; height: 80%"></div>
         <div id="serverspecs" style="width: 100%; height: 20%; margin-top: 20px;">
           <p>The demo is running on a server with the following specs:</p>
             <ul>
@@ -239,13 +239,13 @@
 </div>
 <div class="row">
   <div class="col-md-6">
-    <div id="similarHouse2Div">
-      <p id="similarHouse2" class="shiny-html-output"></p>
+    <div id="shinyElapsedRTimeDiv">
+      <p id="shinyElapsedRTime" class="shiny-html-output"></p>
     </div>
   </div>
   <div class="col-md-6">
-    <div id="similarHouse3Div">
-      <p id="similarHouse3" class="shiny-html-output"></p>
+    <div id="shinyElapsedDistributedRTimeDiv">
+      <p id="shinyElapsedDistributedRTime" class="shiny-html-output"></p>
     </div>
   </div>
 </div>

@@ -66,7 +66,7 @@ If Distributed R was already running you need to stop it first:
 
 You can pass additional options to Shiny:
 
-    R> distributedR_shutdown(); runApp('.', host='0.0.0.0', port=8765, launch.browser=FALSE)
+    R> distributedR_shutdown(); runApp('.', host='0.0.0.0', port=8765, launch.browser=FALSE) 
 
 ## Feedback
 Report any issues and suggestions [here](https://github.com/vertica/DistributedR-demos/issues).
