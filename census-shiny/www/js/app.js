@@ -190,7 +190,7 @@
         this.speedupNumberDiv.innerHTML = "";
       }
       else if(distributedRTime != null && rTime != null) {
-        this.speedupInfoDiv.innerHTML = 'Distributed R speedup over regular R.<br/>Using 3 cores.';
+        this.speedupInfoDiv.innerHTML = 'Distributed R speedup over regular R.<br/>Using 3 executors.';
         this.speedupNumberDiv.innerHTML = speedup.toFixed(2) + "X";
       }
       else if(distributedRTime == null && rTime != null) {

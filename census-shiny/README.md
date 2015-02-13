@@ -1,3 +1,5 @@
+# Distributed R Shiny Census Demo
+
 ## Introduction
 In this demo we analyze the  [Census Dataset](https://archive.ics.uci.edu/ml/datasets/Census+Income "Census dataset") using advanced machine learning algorithms included in the [Distributed R](https://github.com/vertica/DistributedR "Distributed R Github repo") package. We use RStudio's [Shiny](https://github.com/rstudio/shiny "Shiny Giithub repo") to serve the demo over the web.
 
@@ -20,26 +22,25 @@ The census dataset contains 40 attributes (personal, job and income related) tha
 
 #### Prerequisites
 +  R
-+  Latest shiny version from Github
++  Shiny
 +  Distributed R
 +  Logging package
 
 #### Shiny
 
-    if (!require("devtools"))
-      install.packages("devtools")
-    devtools::install_github("rstudio/shiny")  
+We require at least Shiny 0.11.1.
+
+    R> install.packages('shiny')  
 
 
 ####  Distributed R
 
-There are two ways to Install Distributed R.
-Using the Distributed R installer (recommended):
+There are two ways to Install Distributed R. Using the Distributed R installer (recommended):
 
 1.  Go to [http://my.vertica.com/distributedr](http://my.vertica.com/distributedr).
 2.  Sign up/Sign in and download the Distributed R installer (Downloads -> HP Vertica Distributed R).
 3.  Follow the installation instructions in the  [docs](http://www.vertica.com/hp-vertica-documentation/hp-vertica-distributed-r-1-0-x-product-documentation/ "Distributed R docs") .
-4.  Distributed R 1.0.0 supports Cent0S 6.x. 
+4.  Distributed R 1.0.0 supports Cent0S 6.x.
 
 Building from source:
 
@@ -47,12 +48,12 @@ Building from source:
 
 #### Logging
 
-      install.packages('logging')
+    R> install.packages('logging')
 
 #### Dataset
-The dataset is compressed to save space. To unpack the dataset run:
+The dataset is compressed to save space. To uncompress the dataset run:
 
-    gunzip -c census-income.data.gz > census-income.data
+    $ gunzip -c census-income.data.gz > census-income.data
 
 ## Running the demo
 To start the demo:
@@ -66,7 +67,7 @@ If Distributed R was already running you need to stop it first:
 
 You can pass additional options to Shiny:
 
-    R> distributedR_shutdown(); runApp('.', host='0.0.0.0', port=8765, launch.browser=FALSE) 
+    R> distributedR_shutdown(); runApp('.', host='0.0.0.0', port=8765, launch.browser=FALSE)
 
 ## Feedback
 Report any issues and suggestions [here](https://github.com/vertica/DistributedR-demos/issues).
